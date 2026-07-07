@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Global EI Test - Part 2 (Pillar 3 & 4)</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      overflow-x: hidden;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    @media print {
+      body {
+        background: white !important;
+        color: black !important;
+      }
+      header, footer, button, .print-hidden {
+        display: none !important;
+      }
+      .shadow-sm, .shadow-xl, .shadow-md, .shadow-lg {
+        box-shadow: none !important;
+      }
+      .border {
+        border-color: #cbd5e1 !important;
+      }
+      .print-card {
+        border: 2px solid #cbd5e1 !important;
+        background-color: #fff !important;
+      }
+    }
+  </style>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50/50 min-h-screen text-slate-800 antialiased flex flex-col select-none">
+  
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState } = React;
+
+    // --- DATA PILAR PART 2 ---
+    const QUADRANTS = [
+      {
+        id: 3,
+        name: 'Social Awareness',
+        englishName: 'Pillar 3',
+        description: 'Memahami dinamika pasar, empati pada tamu, dan koordinasi antar unit.',
+        color: 'text-emerald-700',
+        borderColor: 'border-emerald-100',
+        progressColor: 'bg-emerald-600',
+        bgColor: 'bg-emerald-50/30'
+      },
+      {
+        id: 4,
+        name: 'Relationship Management',
+        englishName: 'Pillar 4',
+        description: 'Diplomasi menyelesaikan konflik internal & menginspirasi tim marcom lokal.',
+        color: 'text-rose-700',
+        borderColor: 'border-rose-100',
+        progressColor: 'bg-rose-600',
+        bgColor: 'bg-rose-50/30'
+      }
+    ];
+
+    // --- SOAL 21 SAMPAI 40 ---
+    const QUESTIONS = [
+      { id: 21, quadrant: 3, text: 'Perbedaan antar kelompok selalu ada', options: [{ text: 'Dipahami dan dihargai.', score: 1 }, { text: 'Menyebabkan kesulitan dan keresahan.', score: 0 }] },
+      { id: 22, quadrant: 3, text: 'Ketika saya melihat prasangka dan intoleransi, saya selalu', options: [{ text: 'Menantang orang-orang yang memulai.', score: 1 }, { text: 'Menutup mata dan mengabaikannya.', score: 0 }] },
+      { id: 23, quadrant: 3, text: 'Saya selalu membantu berdasarkan', options: [{ text: 'Memahami kebutuhan dan perasaan orang lain.', score: 1 }, { text: 'Tugas-tugas yang membutuhkan bantuan orang lain.', score: 0 }] },
+      { id: 24, quadrant: 3, text: 'Saya selalu', options: [{ text: 'Mendengarkan dengan baik dan memperhatikan isyarat emosional.', score: 1 }, { text: 'Dengarkan kata-kata penting yang disampaikan.', score: 0 }] },
+      { id: 25, quadrant: 3, text: 'Perspektif lain selalu ada.', options: [{ text: 'Dipahami dan kepekaan ditunjukkan.', score: 1 }, { text: 'Mengaburkan masalah dan membuat kita keluar jalur.', score: 0 }] },
+      { id: 26, quadrant: 3, text: 'Saya selalu menemukan jejaring sosial di dalam organisasi.', options: [{ text: 'Membantu menciptakan jaringan pengambilan keputusan yang lebih baik.', score: 1 }, { text: 'Menghambat penyampaian kinerja.', score: 0 }] },
+      { id: 27, quadrant: 3, text: 'Saya selalu menggunakan', options: [{ text: 'Hubungan kekuasaan kunci informal untuk mendapatkan apa yang saya butuhkan.', score: 1 }, { text: 'Jaringan pengambilan keputusan formal untuk mendapatkan apa yang saya butuhkan.', score: 0 }] },
+      { id: 28, quadrant: 3, text: 'Saya selalu', options: [{ text: 'Memahami kebutuhan pelanggan dan mencocokkan produk/layanan.', score: 1 }, { text: 'Berikan kepada pelanggan apa yang mereka minta.', score: 0 }] },
+      { id: 29, quadrant: 3, text: 'Saya selalu', options: [{ text: 'Bertanggung jawab atau bertindak sebagai penasihat terpercaya bagi pelanggan.', score: 1 }, { text: 'Katakan pada pelanggan apa yang ingin mereka dengar.', score: 0 }] },
+      { id: 30, quadrant: 3, text: 'Meningkatkan kepuasan dan loyalitas pelanggan', options: [{ text: 'Itu selalu menjadi bagian dari cara saya bekerja.', score: 1 }, { text: 'Tidak penting dalam mencapai penjualan.', score: 0 }] },
+      { id: 31, quadrant: 4, text: 'Visi dan misi selalu', options: [{ text: 'Digunakan untuk menginspirasi kelompok dan individu.', score: 1 }, { text: 'Diberikan kepada staf agar mereka tahu ke mana kita akan pergi.', score: 0 }] },
+      { id: 32, quadrant: 4, text: 'Saya selalu', options: [{ text: 'Menjadi teladan dalam perilaku yang diharapkan dari orang lain.', score: 1 }, { text: 'Beri tahu orang-orang tentang perilaku yang diharapkan.', score: 0 }] },
+      { id: 33, quadrant: 4, text: 'Saya selalu memberikan tasks kepada orang-orang yang', options: [{ text: 'Akan tumbuh dan berkembang sebagai hasil dari tantangan tersebut.', score: 1 }, { text: 'Mampu menyelesaikan pekerjaan dan melakukannya dengan baik.', score: 0 }] },
+      { id: 34, quadrant: 4, text: 'Memenangkan hati orang lain adalah sesuatu', options: [{ text: 'Saya sangat mahir dalam hal itu.', score: 1 }, { text: 'Itu yang menurutku sulit dilakukan.', score: 0 }] },
+      { id: 35, quadrant: 4, text: 'Saya selalu berkomunikasi dengan cara', options: [{ text: 'Yang berupaya mencapai saling pengertian dan berbagi informasi secara menyeluruh.', score: 1 }, { text: 'Agar semua orang mengerti apa yang saya katakan.', score: 0 }] },
+      { id: 36, quadrant: 4, text: 'Saya selalu', options: [{ text: 'Menyadari perlunya perubahan dan menghilangkan hambatan.', score: 1 }, { text: 'Ikuti perubahan yang didorong oleh orang lain.', score: 0 }] },
+      { id: 37, quadrant: 4, text: 'Saya selalu menangani orang-orang yang sulit', options: [{ text: 'Dengan diplomasi dan taktik.', score: 1 }, { text: 'Dengan cara yang lugas dan langsung.', score: 0 }] },
+      { id: 38, quadrant: 4, text: 'Saya selalu mencari hubungan yang', options: [{ text: 'Saling menguntungkan.', score: 1 }, { text: 'Akan membantu saya mencapai tujuan akhir saya.', score: 0 }] },
+      { id: 39, quadrant: 4, text: 'Saya umumnya memiliki', options: [{ text: 'Fokus yang seimbang antara tugas dan hubungan.', score: 1 }, { text: 'Fokus yang lebih kuat pada tugas daripada hubungan.', score: 0 }] },
+      { id: 40, quadrant: 4, text: 'Saat saya bekerja dengan tim, saya selalu', options: [{ text: 'Libatkan semua anggota untuk berpartisipasi dengan antusias.', score: 1 }, { text: 'Jelaskan dengan gamblang apa yang saya harapkan dari para anggota.', score: 0 }] }
+    ];
+
+    function LandingPage({ onStart }) {
+      return (
+        <div className="max-w-4xl mx-auto my-6 p-1 md:p-6">
+          <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+            <div className="relative bg-slate-50 border-b border-slate-200 px-6 py-12 text-center">
+              <div className="relative z-10 max-w-2xl mx-auto">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-600 border border-emerald-100 mb-4">
+                  Sesi Pelatihan Internal: Part 2 (Interpersonal & Eksternal)
+                </span>
+                <h1 className="text-3xl md:text-5xl font-light text-slate-900 tracking-tight mb-4">
+                  The Global <span className="font-semibold">EI Test - Part 2</span>
+                </h1>
+                <p className="text-slate-500 text-sm max-w-xl mx-auto leading-relaxed">
+                  Evaluasi mandiri yang berfokus pada **Pillar 3: Social Awareness** dan **Pillar 4: Relationship Management** untuk mengukur dinamika komunikasi sosial antar unit.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-6 md:p-10 flex flex-col items-center justify-center space-y-8">
+              <div className="w-full max-w-xl space-y-4 text-sm text-slate-600 text-center leading-relaxed">
+                <p className="font-bold text-slate-400 uppercase tracking-wider text-xs">Pilar Yang Diuji:</p>
+                <div className="grid grid-cols-2 gap-3 text-left p-4 bg-slate-50 rounded-2xl border border-slate-200 text-xs max-w-md mx-auto">
+                  <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-emerald
