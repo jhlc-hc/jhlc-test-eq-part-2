@@ -9,7 +9,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=300;400;500;600;700;800&family=JetBrains+Mono:wght=400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
@@ -64,7 +64,7 @@
   <script type="text/babel">
     const { useState } = React;
 
-    // --- DATA PILAR KHUSUS PART 2 (PILAR 3 & PILAR 4) ---
+    // --- DATA PILAR KHUSUS PART 2 ---
     const QUADRANTS = [
       {
         id: 3,
@@ -90,7 +90,6 @@
 
     // --- DATA JAWABAN & PERTANYAAN KHUSUS SOAL 21-40 ---
     const QUESTIONS = [
-      // Pillar 3 - Social-Awareness
       { id: 21, quadrant: 3, text: 'Perbedaan antar kelompok selalu ada', options: [{ text: 'Dipahami dan dihargai.', score: 1 }, { text: 'Menyebabkan kesulitan dan keresahan.', score: 0 }] },
       { id: 22, quadrant: 3, text: 'Ketika saya melihat prasangka dan intoleransi, saya selalu', options: [{ text: 'Menantang orang-orang yang memulai.', score: 1 }, { text: 'Menutup mata dan mengabaikannya.', score: 0 }] },
       { id: 23, quadrant: 3, text: 'Saya selalu membantu berdasarkan', options: [{ text: 'Memahami kebutuhan dan perasaan orang lain.', score: 1 }, { text: 'Tugas-tugas yang membutuhkan bantuan orang lain.', score: 0 }] },
@@ -102,7 +101,6 @@
       { id: 29, quadrant: 3, text: 'Saya selalu', options: [{ text: 'Bertanggung jawab atau bertindak sebagai penasihat terpercaya bagi pelanggan.', score: 1 }, { text: 'Katakan pada pelanggan apa yang ingin mereka dengar.', score: 0 }] },
       { id: 30, quadrant: 3, text: 'Meningkatkan kepuasan dan loyalitas pelanggan', options: [{ text: 'Itu selalu menjadi bagian dari cara saya bekerja.', score: 1 }, { text: 'Tidak penting dalam mencapai penjualan.', score: 0 }] },
 
-      // Pillar 4 - Relationship-Management
       { id: 31, quadrant: 4, text: 'Visi dan misi selalu', options: [{ text: 'Digunakan untuk menginspirasi kelompok dan individu.', score: 1 }, { text: 'Diberikan kepada staf agar mereka tahu ke mana kita akan pergi.', score: 0 }] },
       { id: 32, quadrant: 4, text: 'Saya selalu', options: [{ text: 'Menjadi teladan dalam perilaku yang diharapkan dari orang lain.', score: 1 }, { text: 'Beri tahu orang-orang tentang perilaku yang diharapkan.', score: 0 }] },
       { id: 33, quadrant: 4, text: 'Saya selalu memberikan tasks kepada orang-orang yang', options: [{ text: 'Akan tumbuh dan berkembang sebagai hasil dari tantangan tersebut.', score: 1 }, { text: 'Mampu menyelesaikan pekerjaan dan melakukannya dengan baik.', score: 0 }] },
@@ -115,7 +113,7 @@
       { id: 40, quadrant: 4, text: 'Saat saya bekerja dengan tim, saya selalu', options: [{ text: 'Libatkan semua anggota untuk berpartisipasi dengan antusias.', score: 1 }, { text: 'Jelaskan dengan gamblang apa yang saya harapkan dari para anggota.', score: 0 }] }
     ];
 
-    // --- LANDING PAGE COMPONENT ---
+    // --- LANDING PAGE ---
     function LandingPage({ onStart }) {
       return (
         <div className="max-w-4xl mx-auto my-6 p-1 md:p-6">
@@ -129,11 +127,10 @@
                   The Global <span className="font-semibold">Emotional Intelligence</span> Test
                 </h1>
                 <p className="text-slate-500 text-sm max-w-xl mx-auto leading-relaxed">
-                  Evaluasi mandiri terfokus pada pilar hubungan sosial dan manajemen relasi kerja guna membangun kolaborasi tim perhotelan yang solid dan tangguh.
+                  Evaluasi mandiri terfokus pada pilar hubungan sosial dan manajemen relasi kerja guna membangun kolaborasi tim.
                 </p>
               </div>
             </div>
-
             <div className="p-6 md:p-10 flex flex-col items-center justify-center space-y-8">
               <div className="w-full max-w-xl space-y-4 text-sm text-slate-600 text-center leading-relaxed">
                 <p className="font-bold text-slate-400 uppercase tracking-wider text-xs">Pilar Yang Dievaluasi pada Part 2:</p>
@@ -142,12 +139,8 @@
                   <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-rose-600" /><span>Pillar 4: Relationship Management</span></div>
                 </div>
               </div>
-
               <div className="w-full max-w-xs pt-2">
-                <button 
-                  onClick={onStart} 
-                  className="w-full py-4 bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm rounded-xl cursor-pointer transition-all shadow-md shadow-slate-900/10 hover:shadow-lg text-center tracking-wide"
-                >
+                <button onClick={onStart} className="w-full py-4 bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm rounded-xl cursor-pointer transition-all shadow-md text-center tracking-wide">
                   Mulai Pengisian Tes (Part 2)
                 </button>
               </div>
@@ -157,7 +150,7 @@
       );
     }
 
-    // --- QUESTION CARD COMPONENT ---
+    // --- QUESTION CARD ---
     function QuestionCard({ questions, currentQuadrant, answers, onAnswerChange, onNext, onPrevious, isFirstStep, isLastStep, totalPercent }) {
       const unansweredCount = questions.filter(q => answers[q.id] === undefined).length;
       const isQuadrantComplete = unansweredCount === 0;
@@ -174,7 +167,6 @@
               <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Langkah {currentQuadrant.id === 3 ? '1' : '2'} dari 2</span>
               <span className="text-xs font-semibold text-slate-500 font-mono">Progress: {Math.round(totalPercent)}%</span>
             </div>
-
             <div className={`p-6 ${colors.light} border-b border-slate-200`}>
               <span className={`inline-block px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide bg-white border border-slate-200 mb-1.5 ${colors.text}`}>
                 {currentQuadrant.englishName}
@@ -182,7 +174,6 @@
               <h2 className="text-xl font-semibold text-slate-900">{currentQuadrant.name}</h2>
               <p className="text-xs text-slate-500 mt-1">{currentQuadrant.description}</p>
             </div>
-
             <div className="divide-y divide-slate-100">
               {questions.map((q) => (
                 <div key={q.id} className="p-6 space-y-3">
@@ -210,7 +201,6 @@
                 </div>
               ))}
             </div>
-
             <div className="bg-slate-50 border-t border-slate-200 px-6 py-4 flex items-center justify-between">
               <button type="button" onClick={onPrevious} disabled={isFirstStep} className={`px-4 py-2 border rounded-full text-xs text-slate-500 bg-white hover:bg-slate-50 cursor-pointer ${isFirstStep ? 'opacity-30 pointer-events-none' : ''}`}>
                 Kembali
@@ -224,7 +214,7 @@
       );
     }
 
-    // --- SCORE DASHBOARD KHUSUS PART 2 ---
+    // --- SCORE DASHBOARD ---
     function ScoreDashboard({ answers, onReset }) {
       const [name, setName] = useState('');
       const [hotelUnit, setHotelUnit] = useState('');
@@ -232,82 +222,54 @@
       let totalEQScorePart2 = 0;
 
       const pilarResults = QUADRANTS.map((quad) => {
-        const minQ = (quad.id - 1) * 10 + 1; // Untuk ID 3 = 21, ID 4 = 31
-        const maxQ = quad.id * 10;          // Untuk ID 3 = 30, ID 4 = 40
+        const minQ = (quad.id - 1) * 10 + 1;
+        const maxQ = quad.id * 10;
         let score = 0;
         for (let i = minQ; i <= maxQ; i++) {
           score += answers[i]?.score || 0;
         }
-
         totalEQScorePart2 += score;
 
         let statusText = '';
         let badgeColor = '';
-        if (score >= 8.0) {
-          statusText = 'Excellent';
-          badgeColor = 'bg-emerald-100 text-emerald-800 border-emerald-200';
-        } else if (score >= 6.0) {
-          statusText = 'Good';
-          badgeColor = 'bg-blue-100 text-blue-800 border-blue-200';
-        } else if (score >= 4.0) {
-          statusText = 'Average';
-          badgeColor = 'bg-amber-100 text-amber-800 border-amber-200';
-        } else {
-          statusText = 'Needs Development';
-          badgeColor = 'bg-rose-100 text-rose-800 border-rose-200';
-        }
+        if (score >= 8.0) { statusText = 'Excellent'; badgeColor = 'bg-emerald-100 text-emerald-800 border-emerald-200'; }
+        else if (score >= 6.0) { statusText = 'Good'; badgeColor = 'bg-blue-100 text-blue-800 border-blue-200'; }
+        else if (score >= 4.0) { statusText = 'Average'; badgeColor = 'bg-amber-100 text-amber-800 border-amber-200'; }
+        else { statusText = 'Needs Development'; badgeColor = 'bg-rose-100 text-rose-800 border-rose-200'; }
 
         return { ...quad, score, statusText, badgeColor };
       });
 
-      const totalPercentage = Math.round((totalEQScorePart2 / 20) * 100);
+      // HITUNG RATA-RATA SESUAI GAMBAR 2 (Total / 2 Pilar)
+      const averageScore = totalEQScorePart2 / 2;
 
-      // LOGIKA PENILAIAN PERSONALISED FEEDBACK (Skor Max Part 2 = 20.0)
-      let generalLabel = '';
-      let generalFeedbackText = '';
-      if (totalEQScorePart2 >= 16.0) {
-        generalLabel = 'Kecerdasan Sosial & Hubungan Interpersonal Luar Biasa';
-        generalFeedbackText = 'Luar biasa! Hasil Anda di Part 2 menunjukkan tingkat kepekaan sosial dan kecakapan manajemen hubungan yang sangat matang. Anda mampu menavigasi dinamika tim, memitigasi konflik antar lini hotel, serta bertindak sebagai katalisator komunikasi yang persuasif saat mengawal jalannya eksekusi marketing bersama unit lokal.';
-      } else if (totalEQScorePart2 >= 12.0) {
-        generalLabel = 'Kecerdasan Relasional Baik dengan Ruang Pengembangan Minor';
-        generalFeedbackText = 'Kerja yang bagus! Hubungan interpersonal dan empati sosial Anda sudah berkembang secara solid. Anda dapat mendengarkan isyarat emosional tim serta menjalin interaksi kerja yang fungsional. Upayakan untuk mengasah kembali aspek diplomasi taktis pada pilar yang nilainya masih berada di batas bawah.';
-      } else if (totalEQScorePart2 >= 8.0) {
-        generalLabel = 'Kapasitas Relasional Rata-rata dengan Kebutuhan Pengembangan Menengah';
-        generalFeedbackText = 'Hasil Anda di batas rata-rata. Kompetensi sosial dan koordinasi eksternal Anda sudah mencukupi untuk operasional harian. Namun, Anda disarankan untuk lebih proaktif dalam membangun engagement kelompok, mengasah pola komunikasi asertif, serta memimpin perubahan tanpa menimbulkan resistensi dalam tim.';
+      // LOGIKA PERSONALISED FEEDBACK BARU BERDASARKAN RATA-RATA SKALA 0 - 10
+      let feedbackText = '';
+      if (averageScore >= 8.0) {
+        feedbackText = `Rata-rata skor anda ${averageScore.toFixed(1)}, it means Excellent — You demonstrate strong emotional intelligence in this area. Keep it up!`;
+      } else if (averageScore >= 6.0) {
+        feedbackText = `Rata-rata skor anda ${averageScore.toFixed(1)}, it means Good — You have solid competencies but there's room to refine.`;
+      } else if (averageScore >= 4.0) {
+        feedbackText = `Rata-rata skor anda ${averageScore.toFixed(1)}, it means Average — This area may benefit from focused attention and practice.`;
       } else {
-        generalLabel = 'Memerlukan Pembinaan & Penataan Manajemen Relasi Taktis';
-        generalFeedbackText = 'Perhatian diperlukan. Skor Anda menunjukkan bahwa manajemen relasi kerja dan empati sosial perlu mendapatkan prioritas pengembangan utama. Sangat dianjurkan untuk melatih teknik Active Listening, menghindari bias saat berkoordinasi, serta mengikuti sesi pendampingan kepemimpinan interpersonal.';
+        feedbackText = `Rata-rata skor anda ${averageScore.toFixed(1)}, it means Needs Development — Targeted effort here could significantly boost your effectiveness.`;
       }
 
       return (
         <div className="max-w-4xl mx-auto my-4 p-1 md:p-6">
           <div className="bg-white rounded-3xl border border-slate-200 shadow-md p-6 md:p-8 space-y-6">
             
-            {/* INPUT IDENTITAS AKHIR */}
             <div className="print-hidden bg-slate-50 border border-slate-200 p-5 rounded-2xl grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-1">
                 <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider">Nama / Inisial Markom</label>
-                <input 
-                  type="text" 
-                  value={name} 
-                  onChange={(e) => setName(e.target.value)} 
-                  placeholder="Ketik nama Anda di sini..." 
-                  className="w-full px-4 py-2.5 bg-white border border-slate-200 rounded-xl text-xs focus:outline-none focus:border-slate-400 font-medium transition-all"
-                />
+                <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Ketik nama Anda di sini..." className="w-full px-4 py-2.5 bg-white border border-slate-200 rounded-xl text-xs focus:outline-none focus:border-slate-400 font-medium font-sans transition-all"/>
               </div>
               <div className="space-y-1">
                 <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider">Unit Hotel / Cluster Properti</label>
-                <input 
-                  type="text" 
-                  value={hotelUnit} 
-                  onChange={(e) => setHotelUnit(e.target.value)} 
-                  placeholder="Contoh: Marcom - JHL Solitaire..." 
-                  className="w-full px-4 py-2.5 bg-white border border-slate-200 rounded-xl text-xs focus:outline-none focus:border-slate-400 font-medium transition-all"
-                />
+                <input type="text" value={hotelUnit} onChange={(e) => setHotelUnit(e.target.value)} placeholder="Contoh: Marcom - JHL Solitaire..." className="w-full px-4 py-2.5 bg-white border border-slate-200 rounded-xl text-xs focus:outline-none focus:border-slate-400 font-medium font-sans transition-all"/>
               </div>
             </div>
 
-            {/* HEADER REPORT */}
             <div className="border-b border-slate-100 pb-4 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
               <div>
                 <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 border border-emerald-100 px-2.5 py-0.5 rounded-md uppercase tracking-wider">
@@ -318,24 +280,13 @@
                   Personnel: <span className="text-slate-800 font-bold">{name || 'Assessment Tanpa Nama'}</span> &bull; Unit: <span className="text-slate-800 font-bold">{hotelUnit || 'General Cluster / Property'}</span>
                 </p>
               </div>
-              
               <div className="print-hidden flex items-center gap-2">
-                <button 
-                  onClick={() => window.print()} 
-                  className="px-4 py-2.5 bg-slate-100 border border-slate-200 text-slate-700 rounded-xl text-xs font-bold hover:bg-slate-200 cursor-pointer transition-all"
-                >
-                  Export Report (PDF)
-                </button>
-                <button 
-                  onClick={onReset} 
-                  className="px-4 py-2.5 bg-slate-900 text-white rounded-xl text-xs font-bold hover:bg-slate-800 cursor-pointer transition-all"
-                >
-                  Reset Tes
-                </button>
+                <button onClick={() => window.print()} className="px-4 py-2.5 bg-slate-100 border border-slate-200 text-slate-700 rounded-xl text-xs font-bold hover:bg-slate-200 cursor-pointer transition-all">Export Report (PDF)</button>
+                <button onClick={onReset} className="px-4 py-2.5 bg-slate-900 text-white rounded-xl text-xs font-bold hover:bg-slate-800 cursor-pointer transition-all">Reset Tes</button>
               </div>
             </div>
 
-            {/* YELLOW RECTANGLE BANNER RESULT SCORE */}
+            {/* CUMULATIVE SCORE BANNER */}
             <div className="bg-[#FFFF00] border-2 border-slate-900 p-6 rounded-sm text-center space-y-2 shadow-sm print-card">
               <h2 className="text-xs font-extrabold text-slate-900 tracking-widest uppercase">Part 2 Cumulative Score</h2>
               <div className="text-5xl font-black font-mono text-slate-900 tracking-tighter">
@@ -343,19 +294,18 @@
                 <span className="text-xl font-bold opacity-60 font-sans ml-1">/20.0</span>
               </div>
               <p className="text-xs font-bold text-slate-900 md:text-sm tracking-tight pt-1">
-                {totalPercentage}% &mdash; {generalLabel}
+                Rata-rata Kuadran: {averageScore.toFixed(1)} / 10.0
               </p>
             </div>
 
-            {/* PERSONALISED FEEDBACK PANEL (BAHASA INDONESIA) */}
+            {/* NEW UPDATE: PERSONALISED FEEDBACK PANEL */}
             <div className="border border-amber-200 bg-amber-50/50 p-5 rounded-md space-y-1.5 print-card">
               <h3 className="text-[10px] font-bold tracking-widest uppercase text-amber-900/80 block">Personalised Feedback</h3>
               <p className="text-xs text-slate-800 leading-relaxed font-semibold">
-                {generalFeedbackText}
+                {feedbackText}
               </p>
             </div>
 
-            {/* BREAKDOWN DETAIL PILAR 3 DAN 4 */}
             <div className="space-y-3">
               <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Breakdown Skor per Pilar Kompetensi</h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -389,21 +339,14 @@
       );
     }
 
-    // --- MAIN ENGINE APP CONTROL ---
+    // --- MAIN ENGINE ---
     function App() {
       const [appState, setAppState] = useState('LANDING');
       const [answers, setAnswers] = useState({});
       const [currentQuadrantIndex, setCurrentQuadrantIndex] = useState(0);
 
-      const handleStart = () => {
-        setAnswers({});
-        setCurrentQuadrantIndex(0);
-        setAppState('QUESTIONS');
-      };
-
-      const handleAnswerChange = (qId, answerObj) => {
-        setAnswers(prev => ({ ...prev, [qId]: answerObj }));
-      };
+      const handleStart = () => { setAnswers({}); setCurrentQuadrantIndex(0); setAppState('QUESTIONS'); };
+      const handleAnswerChange = (qId, answerObj) => { setAnswers(prev => ({ ...prev, [qId]: answerObj })); };
 
       const handleNext = () => {
         if (currentQuadrantIndex < QUADRANTS.length - 1) {
@@ -433,41 +376,16 @@
               <div className="w-2.5 h-2.5 rounded-full bg-slate-900" />
               <span className="text-xs font-bold tracking-wider uppercase text-slate-900">EQ Part 2 Analytics</span>
             </div>
-            <span className="text-[10px] font-bold uppercase px-2 py-0.5 bg-slate-100 text-slate-700 rounded-md border border-slate-200">
-              Internal Corporate Dashboard
-            </span>
+            <span className="text-[10px] font-bold uppercase px-2 py-0.5 bg-slate-100 text-slate-700 rounded-md border border-slate-200">Internal Corporate Dashboard</span>
           </header>
-
           <main className="flex-1 w-full p-2 md:p-4">
             {appState === 'LANDING' && <LandingPage onStart={handleStart} />}
             {appState === 'QUESTIONS' && (
-              <QuestionCard
-                questions={currentQuestions}
-                currentQuadrant={currentQuadrant}
-                answers={answers}
-                onAnswerChange={handleAnswerChange}
-                onNext={handleNext}
-                onPrevious={handlePrevious}
-                isFirstStep={currentQuadrantIndex === 0}
-                isLastStep={currentQuadrantIndex === QUADRANTS.length - 1}
-                totalPercent={totalPercent}
-              />
+              <QuestionCard questions={currentQuestions} currentQuadrant={currentQuadrant} answers={answers} onAnswerChange={handleAnswerChange} onNext={handleNext} onPrevious={handlePrevious} isFirstStep={currentQuadrantIndex === 0} isLastStep={currentQuadrantIndex === QUADRANTS.length - 1} totalPercent={totalPercent} />
             )}
-            {appState === 'RESULTS' && (
-              <ScoreDashboard 
-                answers={answers} 
-                onReset={() => {
-                  setAppState('LANDING');
-                  setAnswers({});
-                  setCurrentQuadrantIndex(0);
-                }} 
-              />
-            )}
+            {appState === 'RESULTS' && <ScoreDashboard answers={answers} onReset={() => setAppState('LANDING')} />}
           </main>
-
-          <footer className="py-5 bg-white border-t border-slate-200 text-center text-[9px] text-slate-400 uppercase tracking-widest print-hidden">
-            Corporate Digital Marketing Section &copy; 2026
-          </footer>
+          <footer className="py-5 bg-white border-t border-slate-200 text-center text-[9px] text-slate-400 uppercase tracking-widest print-hidden">Corporate Digital Marketing Section &copy; 2026</footer>
         </div>
       );
     }
