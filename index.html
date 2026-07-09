@@ -88,8 +88,10 @@
       }
     ];
 
-    // --- DATA JAWABAN & PERTANYAAN KHUSUS SOAL 21-40 (Skor 0 diganti menjadi 0.5) ---
+    // --- DATA JAWABAN & PERTANYAAN VALID SOAL 21-40 ---
+    // Dipastikan presisi 1.0 untuk jawaban terbaik dan 0.5 untuk jawaban terendah
     const QUESTIONS = [
+      // --- PILLAR 3: SOCIAL AWARENESS ---
       { id: 21, quadrant: 3, text: 'Perbedaan antar kelompok selalu ada', options: [{ text: 'Dipahami dan dihargai.', score: 1 }, { text: 'Menyebabkan kesulitan dan keresahan.', score: 0.5 }] },
       { id: 22, quadrant: 3, text: 'Ketika saya melihat prasangka dan intoleransi, saya selalu', options: [{ text: 'Menantang orang-orang yang memulai.', score: 1 }, { text: 'Menutup mata dan mengabaikannya.', score: 0.5 }] },
       { id: 23, quadrant: 3, text: 'Saya selalu membantu berdasarkan', options: [{ text: 'Memahami kebutuhan dan perasaan orang lain.', score: 1 }, { text: 'Tugas-tugas yang membutuhkan bantuan orang lain.', score: 0.5 }] },
@@ -101,9 +103,10 @@
       { id: 29, quadrant: 3, text: 'Saya selalu', options: [{ text: 'Bertanggung jawab atau bertindak sebagai penasihat terpercaya bagi pelanggan.', score: 1 }, { text: 'Katakan pada pelanggan apa yang ingin mereka dengar.', score: 0.5 }] },
       { id: 30, quadrant: 3, text: 'Meningkatkan kepuasan dan loyalitas pelanggan', options: [{ text: 'Itu selalu menjadi bagian dari cara saya bekerja.', score: 1 }, { text: 'Tidak penting dalam mencapai penjualan.', score: 0.5 }] },
 
+      // --- PILLAR 4: RELATIONSHIP MANAGEMENT (Sudah dikunci total agar opsi terendah presisi 0.5) ---
       { id: 31, quadrant: 4, text: 'Visi dan misi selalu', options: [{ text: 'Digunakan untuk menginspirasi kelompok dan individu.', score: 1 }, { text: 'Diberikan kepada staf agar mereka tahu ke mana kita akan pergi.', score: 0.5 }] },
       { id: 32, quadrant: 4, text: 'Saya selalu', options: [{ text: 'Menjadi teladan dalam perilaku yang diharapkan dari orang lain.', score: 1 }, { text: 'Beri tahu orang-orang tentang perilaku yang diharapkan.', score: 0.5 }] },
-      { id: 33, quadrant: 4, text: 'Saya selalu memberikan tasks kepada orang-orang yang', options: [{ text: 'Akan tumbuh dan berkembang sebagai hasil dari tantangan tersebut.', score: 1 }, { text: 'Mable menyelesaikan pekerjaan dan melakukannya dengan baik.', score: 0.5 }] },
+      { id: 33, quadrant: 4, text: 'Saya selalu memberikan tugas kepada orang-orang yang', options: [{ text: 'Akan tumbuh dan berkembang sebagai hasil dari tantangan tersebut.', score: 1 }, { text: 'Mampu menyelesaikan pekerjaan dan melakukannya dengan baik.', score: 0.5 }] },
       { id: 34, quadrant: 4, text: 'Memenangkan hati orang lain adalah sesuatu', options: [{ text: 'Saya sangat mahir dalam hal itu.', score: 1 }, { text: 'Itu yang menurutku sulit dilakukan.', score: 0.5 }] },
       { id: 35, quadrant: 4, text: 'Saya selalu berkomunikasi dengan cara', options: [{ text: 'Yang berupaya mencapai saling pengertian dan berbagi informasi secara menyeluruh.', score: 1 }, { text: 'Agar semua orang mengerti apa yang saya katakan.', score: 0.5 }] },
       { id: 36, quadrant: 4, text: 'Saya selalu', options: [{ text: 'Menyadari perlunya perubahan dan menghilangkan hambatan.', score: 1 }, { text: 'Ikuti perubahan yang didorong oleh orang lain.', score: 0.5 }] },
@@ -243,13 +246,13 @@
 
       let feedbackText = '';
       if (averageScore >= 9.0) {
-        feedbackText = `Rata-rata skor anda {averageScore.toFixed(1)}, yang berarti Excellent — Anda menguasai kepekaan sosial tingkat tinggi dan manajemen relasi profesional yang sangat efektif.`;
+        feedbackText = `Rata-rata skor Anda ${averageScore.toFixed(1)}, yang berarti Excellent — Anda menguasai kepekaan sosial tingkat tinggi dan manajemen relasi profesional yang sangat efektif.`;
       } else if (averageScore >= 7.5) {
-        feedbackText = `Rata-rata skor anda ${averageScore.toFixed(1)}, yang berarti Good — Anda terampil berkolaborasi dan berempati, dengan sedikit area untuk peningkatan komunikasi strategis.`;
+        feedbackText = `Rata-rata skor Anda ${averageScore.toFixed(1)}, yang berarti Good — Anda terampil berkolaborasi dan berempati, dengan sedikit area untuk peningkatan komunikasi strategis.`;
       } else if (averageScore >= 6.0) {
-        feedbackText = `Rata-rata skor anda ${averageScore.toFixed(1)}, yang berarti Average — Komunikasi tim atau empati pelanggan di area ini masih dapat ditingkatkan secara aktif.`;
+        feedbackText = `Rata-rata skor Anda ${averageScore.toFixed(1)}, yang berarti Average — Komunikasi tim atau empati pelanggan di area ini masih dapat ditingkatkan secara aktif.`;
       } else {
-        feedbackText = `Rata-rata skor anda ${averageScore.toFixed(1)}, yang berarti Needs Development — Fokus penguatan koordinasi interpersonal sangat disarankan demi kelancaran operasional kerja.`;
+        feedbackText = `Rata-rata skor Anda ${averageScore.toFixed(1)}, yang berarti Needs Development — Fokus penguatan koordinasi interpersonal sangat disarankan demi kelancaran operasional kerja.`;
       }
 
       return (
@@ -277,7 +280,7 @@
                 <span className="text-xl font-bold opacity-60 font-sans ml-1">/20.0</span>
               </div>
               <p className="text-xs font-bold text-slate-900 md:text-sm tracking-tight pt-1">
-                Rata-rata Kuadran: {averageScore.toFixed(1)} / 10.0 (Rentang Skor: 5.0 - 10.0)
+                Rata-rata Kuadran: {averageScore.toFixed(1)} / 10.0 (Rentang Skor per Pilar: 5.0 - 10.0)
               </p>
             </div>
 
