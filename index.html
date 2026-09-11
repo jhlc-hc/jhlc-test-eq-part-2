@@ -64,7 +64,6 @@
   <script type="text/babel">
     const { useState } = React;
 
-    // --- DATA PILAR KHUSUS PART 2 ---
     const QUADRANTS = [
       {
         id: 3,
@@ -88,9 +87,7 @@
       }
     ];
 
-    // --- DATA JAWABAN & PERTANYAAN SOAL 21-40 ---
     const QUESTIONS = [
-      // --- PILLAR 3 (ID 1-10, Display 21-30) ---
       { id: 1, displayNum: 21, quadrant: 3, text: 'Perbedaan antar kelompok selalu ada', options: [{ text: 'Dipahami dan dihargai.', score: 1 }, { text: 'Menyebabkan kesulitan dan keresahan.', score: 0.5 }] },
       { id: 2, displayNum: 22, quadrant: 3, text: 'Ketika saya melihat prasangka dan intoleransi, saya selalu', options: [{ text: 'Menantang orang-orang yang memulai.', score: 1 }, { text: 'Menutup mata dan mengabaikannya.', score: 0.5 }] },
       { id: 3, displayNum: 23, quadrant: 3, text: 'Saya selalu membantu berdasarkan', options: [{ text: 'Memahami kebutuhan dan perasaan orang lain.', score: 1 }, { text: 'Tugas-tugas yang membutuhkan bantuan orang lain.', score: 0.5 }] },
@@ -101,8 +98,6 @@
       { id: 8, displayNum: 28, quadrant: 3, text: 'Saya selalu', options: [{ text: 'Memahami kebutuhan pelanggan dan mencocokkan produk/layanan.', score: 1 }, { text: 'Berikan kepada pelanggan apa yang mereka minta.', score: 0.5 }] },
       { id: 9, displayNum: 29, quadrant: 3, text: 'Saya selalu', options: [{ text: 'Bertanggung jawab atau bertindak sebagai penasihat terpercaya bagi pelanggan.', score: 1 }, { text: 'Katakan pada pelanggan apa yang ingin mereka dengar.', score: 0.5 }] },
       { id: 10, displayNum: 30, quadrant: 3, text: 'Meningkatkan kepuasan dan loyalitas pelanggan', options: [{ text: 'Itu selalu menjadi bagian dari cara saya bekerja.', score: 1 }, { text: 'Tidak penting dalam mencapai penjualan.', score: 0.5 }] },
-
-      // --- PILLAR 4 (ID 11-20, Display 31-40) ---
       { id: 11, displayNum: 31, quadrant: 4, text: 'Visi dan misi selalu', options: [{ text: 'Digunakan untuk menginspirasi kelompok dan individu.', score: 1 }, { text: 'Diberikan kepada staf agar mereka tahu ke mana kita akan pergi.', score: 0.5 }] },
       { id: 12, displayNum: 32, quadrant: 4, text: 'Saya selalu', options: [{ text: 'Beri tahu orang-orang tentang perilaku yang diharapkan.', score: 0.5 }, { text: 'Menjadi teladan dalam perilaku yang diharapkan dari orang lain.', score: 1 }] },
       { id: 13, displayNum: 33, quadrant: 4, text: 'Saya selalu memberikan tasks kepada orang-orang yang', options: [{ text: 'Akan tumbuh dan berkembang sebagai hasil dari tantangan tersebut.', score: 1 }, { text: 'Mable menyelesaikan pekerjaan dan melakukannya dengan baik.', score: 0.5 }] },
@@ -115,7 +110,6 @@
       { id: 20, displayNum: 40, quadrant: 4, text: 'Saat saya bekerja dengan tim, saya selalu', options: [{ text: 'Jelaskan dengan gamblang apa yang saya harapkan dari para anggota.', score: 0.5 }, { text: 'Libatkan semua anggota untuk berpartisipasi dengan antusias.', score: 1 }] }
     ];
 
-    // --- LANDING PAGE ---
     function LandingPage({ onStart }) {
       return (
         <div className="max-w-4xl mx-auto my-6 p-1 md:p-6">
@@ -152,7 +146,6 @@
       );
     }
 
-    // --- QUESTION CARD ---
     function QuestionCard({ questions, currentQuadrant, answers, onAnswerChange, onNext, onPrevious, isFirstStep, isLastStep, totalPercent }) {
       const unansweredCount = questions.filter(q => answers[q.id] === undefined).length;
       const isQuadrantComplete = unansweredCount === 0;
@@ -216,12 +209,10 @@
       );
     }
 
-    // --- SCORE DASHBOARD ---
     function ScoreDashboard({ answers, onReset }) {
       let totalEQScorePart2 = 0;
 
       const pilarResults = QUADRANTS.map((quad) => {
-        // PERBAIKAN LOGIKA: Ambil soal berdasarkan kuadran secara dinamis
         const pilarQuestions = QUESTIONS.filter(q => q.quadrant === quad.id);
         let score = 0;
         
@@ -271,7 +262,6 @@
               </div>
             </div>
 
-            {/* CUMULATIVE SCORE BANNER */}
             <div className="bg-[#FFFF00] border-2 border-slate-900 p-6 rounded-sm text-center space-y-2 shadow-sm print-card">
               <h2 className="text-xs font-extrabold text-slate-900 tracking-widest uppercase">Part 2 Cumulative Score</h2>
               <div className="text-5xl font-black font-mono text-slate-900 tracking-tighter">
@@ -283,7 +273,6 @@
               </p>
             </div>
 
-            {/* PERSONALISED FEEDBACK PANEL */}
             <div className="border border-amber-200 bg-amber-50/50 p-5 rounded-md space-y-1.5 print-card">
               <h3 className="text-[10px] font-bold tracking-widest uppercase text-amber-900/80 block">Personalised Feedback</h3>
               <p className="text-xs text-slate-800 leading-relaxed font-semibold">
@@ -324,7 +313,6 @@
       );
     }
 
-    // --- MAIN ENGINE ---
     function App() {
       const [appState, setAppState] = useState('LANDING');
       const [answers, setAnswers] = useState({});
