@@ -220,23 +220,26 @@
     function ScoreDashboard({ answers, onReset }) {
       let totalEQScorePart2 = 0;
 
-      const pilarResults = QUADRANTS.map((quad) => {
-        const minQ = quad.id === 3 ? 1 : 11;
-        const maxQ = quad.id === 3 ? 10 : 20;
-        let score = 0;
-        for (let i = minQ; i <= maxQ; i++) {
-          score += answers[i]?.score || 0;
-        }
-        totalEQScorePart2 += score;
-
-        let statusText = '';
-        let badgeColor = '';
-        if (score >= 8.0) { statusText = 'Excellent'; badgeColor = 'bg-emerald-100 text-emerald-800 border-emerald-200'; }
-        else if (score >= 6.0) { statusText = 'Good'; badgeColor = 'bg-blue-100 text-blue-800 border-blue-200'; }
-        else if (score >= 4.0) { statusText = 'Average'; badgeColor = 'bg-amber-100 text-amber-800 border-amber-200'; }
-        else { statusText = 'Needs Development'; badgeColor = 'bg-rose-100 text-rose-800 border-rose-200'; }
-
-        return { ...quad, score, statusText, badgeColor };
+          const pilarResults = QUADRANTS.map((quad) => {
+      // Ubah range ID sesuai dengan data QUESTIONS (1-10 untuk Pillar 3, 11-20 untuk Pillar 4)
+      const minQ = quad.id === 3 ? 1 : 11;
+      const maxQ = quad.id === 3 ? 10 : 20;
+      
+      let score = 0;
+      for (let i = minQ; i <= maxQ; i++) {
+        score += answers[i]?.score || 0;
+      }
+      totalEQScorePart2 += score;
+    
+      let statusText = '';
+      let badgeColor = '';
+      if (score >= 8.0) { statusText = 'Excellent'; badgeColor = 'bg-emerald-100 text-emerald-800 border-emerald-200'; }
+      else if (score >= 6.0) { statusText = 'Good'; badgeColor = 'bg-blue-100 text-blue-800 border-blue-200'; }
+      else if (score >= 4.0) { statusText = 'Average'; badgeColor = 'bg-amber-100 text-amber-800 border-amber-200'; }
+      else { statusText = 'Needs Development'; badgeColor = 'bg-rose-100 text-rose-800 border-rose-200'; }
+    
+      return { ...quad, score, statusText, badgeColor };
+});
       });
 
       const averageScore = totalEQScorePart2 / 2;
