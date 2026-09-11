@@ -88,31 +88,31 @@
       }
     ];
 
-    // --- DATA JAWABAN & PERTANYAAN SOAL 21-40 DENGAN URUTAN DAN SKOR PDF YANG BENAR ---
+    // --- DATA JAWABAN & PERTANYAAN SOAL 21-40 ---
     const QUESTIONS = [
-      // --- PILLAR 3 ---
-      { id: 1, quadrant: 3, text: 'Perbedaan antar kelompok selalu ada', options: [{ text: 'Dipahami dan dihargai.', score: 1 }, { text: 'Menyebabkan kesulitan dan keresahan.', score: 0.5 }] },
-      { id: 2, quadrant: 3, text: 'Ketika saya melihat prasangka dan intoleransi, saya selalu', options: [{ text: 'Menantang orang-orang yang memulai.', score: 1 }, { text: 'Menutup mata dan mengabaikannya.', score: 0.5 }] },
-      { id: 3, quadrant: 3, text: 'Saya selalu membantu berdasarkan', options: [{ text: 'Memahami kebutuhan dan perasaan orang lain.', score: 1 }, { text: 'Tugas-tugas yang membutuhkan bantuan orang lain.', score: 0.5 }] },
-      { id: 4, quadrant: 3, text: 'Saya selalu', options: [{ text: 'Mendengarkan dengan baik dan memperhatikan isyarat emosional.', score: 1 }, { text: 'Dengarkan kata-kata penting yang disampaikan.', score: 0.5 }] },
-      { id: 5, quadrant: 3, text: 'Perspektif lain selalu ada.', options: [{ text: 'Mengaburkan masalah dan membuat kita keluar jalur.', score: 0.5 }, { text: 'Dipahami dan kepekaan ditunjukkan.', score: 1 }] },
-      { id: 6, quadrant: 3, text: 'Saya selalu menemukan jejaring sosial di dalam organisasi.', options: [{ text: 'Membantu menciptakan jaringan pengambilan keputusan yang lebih baik.', score: 1 }, { text: 'Menghambat penyampaian kinerja.', score: 0.5 }] },
-      { id: 7, quadrant: 3, text: 'Saya selalu menggunakan', options: [{ text: 'Hubungan kekuasaan kunci informal untuk mendapatkan apa yang saya butuhkan.', score: 1 }, { text: 'Jaringan pengambilan keputusan formal untuk mendapatkan apa yang saya butuhkan.', score: 0.5 }] },
-      { id: 8, quadrant: 3, text: 'Saya selalu', options: [{ text: 'Memahami kebutuhan pelanggan dan mencocokkan produk/layanan.', score: 1 }, { text: 'Berikan kepada pelanggan apa yang mereka minta.', score: 0.5 }] },
-      { id: 9, quadrant: 3, text: 'Saya selalu', options: [{ text: 'Bertanggung jawab atau bertindak sebagai penasihat terpercaya bagi pelanggan.', score: 1 }, { text: 'Katakan pada pelanggan apa yang ingin mereka dengar.', score: 0.5 }] },
-      { id: 10, quadrant: 3, text: 'Meningkatkan kepuasan dan loyalitas pelanggan', options: [{ text: 'Itu selalu menjadi bagian dari cara saya bekerja.', score: 1 }, { text: 'Tidak penting dalam mencapai penjualan.', score: 0.5 }] },
+      // --- PILLAR 3 (ID 1-10, Display 21-30) ---
+      { id: 1, displayNum: 21, quadrant: 3, text: 'Perbedaan antar kelompok selalu ada', options: [{ text: 'Dipahami dan dihargai.', score: 1 }, { text: 'Menyebabkan kesulitan dan keresahan.', score: 0.5 }] },
+      { id: 2, displayNum: 22, quadrant: 3, text: 'Ketika saya melihat prasangka dan intoleransi, saya selalu', options: [{ text: 'Menantang orang-orang yang memulai.', score: 1 }, { text: 'Menutup mata dan mengabaikannya.', score: 0.5 }] },
+      { id: 3, displayNum: 23, quadrant: 3, text: 'Saya selalu membantu berdasarkan', options: [{ text: 'Memahami kebutuhan dan perasaan orang lain.', score: 1 }, { text: 'Tugas-tugas yang membutuhkan bantuan orang lain.', score: 0.5 }] },
+      { id: 4, displayNum: 24, quadrant: 3, text: 'Saya selalu', options: [{ text: 'Mendengarkan dengan baik dan memperhatikan isyarat emosional.', score: 1 }, { text: 'Dengarkan kata-kata penting yang disampaikan.', score: 0.5 }] },
+      { id: 5, displayNum: 25, quadrant: 3, text: 'Perspektif lain selalu ada.', options: [{ text: 'Mengaburkan masalah dan membuat kita keluar jalur.', score: 0.5 }, { text: 'Dipahami dan kepekaan ditunjukkan.', score: 1 }] },
+      { id: 6, displayNum: 26, quadrant: 3, text: 'Saya selalu menemukan jejaring sosial di dalam organisasi.', options: [{ text: 'Membantu menciptakan jaringan pengambilan keputusan yang lebih baik.', score: 1 }, { text: 'Menghambat penyampaian kinerja.', score: 0.5 }] },
+      { id: 7, displayNum: 27, quadrant: 3, text: 'Saya selalu menggunakan', options: [{ text: 'Hubungan kekuasaan kunci informal untuk mendapatkan apa yang saya butuhkan.', score: 1 }, { text: 'Jaringan pengambilan keputusan formal untuk mendapatkan apa yang saya butuhkan.', score: 0.5 }] },
+      { id: 8, displayNum: 28, quadrant: 3, text: 'Saya selalu', options: [{ text: 'Memahami kebutuhan pelanggan dan mencocokkan produk/layanan.', score: 1 }, { text: 'Berikan kepada pelanggan apa yang mereka minta.', score: 0.5 }] },
+      { id: 9, displayNum: 29, quadrant: 3, text: 'Saya selalu', options: [{ text: 'Bertanggung jawab atau bertindak sebagai penasihat terpercaya bagi pelanggan.', score: 1 }, { text: 'Katakan pada pelanggan apa yang ingin mereka dengar.', score: 0.5 }] },
+      { id: 10, displayNum: 30, quadrant: 3, text: 'Meningkatkan kepuasan dan loyalitas pelanggan', options: [{ text: 'Itu selalu menjadi bagian dari cara saya bekerja.', score: 1 }, { text: 'Tidak penting dalam mencapai penjualan.', score: 0.5 }] },
 
-      // --- PILLAR 4 ---
-      { id: 11, quadrant: 4, text: 'Visi dan misi selalu', options: [{ text: 'Digunakan untuk menginspirasi kelompok dan individu.', score: 1 }, { text: 'Diberikan kepada staf agar mereka tahu ke mana kita akan pergi.', score: 0.5 }] },
-      { id: 12, quadrant: 4, text: 'Saya selalu', options: [{ text: 'Beri tahu orang-orang tentang perilaku yang diharapkan.', score: 0.5 }, { text: 'Menjadi teladan dalam perilaku yang diharapkan dari orang lain.', score: 1 }] },
-      { id: 13, quadrant: 4, text: 'Saya selalu memberikan tasks kepada orang-orang yang', options: [{ text: 'Akan tumbuh dan berkembang sebagai hasil dari tantangan tersebut.', score: 1 }, { text: 'Mable menyelesaikan pekerjaan dan melakukannya dengan baik.', score: 0.5 }] },
-      { id: 14, quadrant: 4, text: 'Memenangkan hati orang lain adalah sesuatu', options: [{ text: 'Saya sangat mahir dalam hal itu.', score: 1 }, { text: 'Itu yang menurutku sulit dilakukan.', score: 0.5 }] },
-      { id: 15, quadrant: 4, text: 'Saya selalu berkomunikasi dengan cara', options: [{ text: 'Yang berupaya mencapai saling pengertian dan berbagi informasi secara menyeluruh.', score: 1 }, { text: 'Agar semua orang mengerti apa yang saya katakan.', score: 0.5 }] },
-      { id: 16, quadrant: 4, text: 'Saya selalu', options: [{ text: 'Ikuti perubahan yang didorong oleh orang lain.', score: 0.5 }, { text: 'Menyadari perlunya perubahan dan menghilangkan hambatan.', score: 1 }] },
-      { id: 17, quadrant: 4, text: 'Saya selalu menangani orang-orang yang sulit', options: [{ text: 'Dengan cara yang lugas dan langsung.', score: 0.5 }, { text: 'Dengan diplomasi dan taktik.', score: 1 }] },
-      { id: 18, quadrant: 4, text: 'Saya selalu mencari hubungan yang', options: [{ text: 'Saling menguntungkan.', score: 1 }, { text: 'Akan membantu saya mencapai tujuan akhir saya.', score: 0.5 }] },
-      { id: 19, quadrant: 4, text: 'Saya umumnya memiliki', options: [{ text: 'Fokus yang lebih kuat pada tugas daripada hubungan.', score: 0.5 }, { text: 'Fokus yang seimbang antara tugas dan hubungan.', score: 1 }] },
-      { id: 20, quadrant: 4, text: 'Saat saya bekerja dengan tim, saya selalu', options: [{ text: 'Jelaskan dengan gamblang apa yang saya harapkan dari para anggota.', score: 0.5 }, { text: 'Libatkan semua anggota untuk berpartisipasi dengan antusias.', score: 1 }] }
+      // --- PILLAR 4 (ID 11-20, Display 31-40) ---
+      { id: 11, displayNum: 31, quadrant: 4, text: 'Visi dan misi selalu', options: [{ text: 'Digunakan untuk menginspirasi kelompok dan individu.', score: 1 }, { text: 'Diberikan kepada staf agar mereka tahu ke mana kita akan pergi.', score: 0.5 }] },
+      { id: 12, displayNum: 32, quadrant: 4, text: 'Saya selalu', options: [{ text: 'Beri tahu orang-orang tentang perilaku yang diharapkan.', score: 0.5 }, { text: 'Menjadi teladan dalam perilaku yang diharapkan dari orang lain.', score: 1 }] },
+      { id: 13, displayNum: 33, quadrant: 4, text: 'Saya selalu memberikan tasks kepada orang-orang yang', options: [{ text: 'Akan tumbuh dan berkembang sebagai hasil dari tantangan tersebut.', score: 1 }, { text: 'Mable menyelesaikan pekerjaan dan melakukannya dengan baik.', score: 0.5 }] },
+      { id: 14, displayNum: 34, quadrant: 4, text: 'Memenangkan hati orang lain adalah sesuatu', options: [{ text: 'Saya sangat mahir dalam hal itu.', score: 1 }, { text: 'Itu yang menurutku sulit dilakukan.', score: 0.5 }] },
+      { id: 15, displayNum: 35, quadrant: 4, text: 'Saya selalu berkomunikasi dengan cara', options: [{ text: 'Yang berupaya mencapai saling pengertian dan berbagi informasi secara menyeluruh.', score: 1 }, { text: 'Agar semua orang mengerti apa yang saya katakan.', score: 0.5 }] },
+      { id: 16, displayNum: 36, quadrant: 4, text: 'Saya selalu', options: [{ text: 'Ikuti perubahan yang didorong oleh orang lain.', score: 0.5 }, { text: 'Menyadari perlunya perubahan dan menghilangkan hambatan.', score: 1 }] },
+      { id: 17, displayNum: 37, quadrant: 4, text: 'Saya selalu menangani orang-orang yang sulit', options: [{ text: 'Dengan cara yang lugas dan langsung.', score: 0.5 }, { text: 'Dengan diplomasi dan taktik.', score: 1 }] },
+      { id: 18, displayNum: 38, quadrant: 4, text: 'Saya selalu mencari hubungan yang', options: [{ text: 'Saling menguntungkan.', score: 1 }, { text: 'Akan membantu saya mencapai tujuan akhir saya.', score: 0.5 }] },
+      { id: 19, displayNum: 39, quadrant: 4, text: 'Saya umumnya memiliki', options: [{ text: 'Fokus yang lebih kuat pada tugas daripada hubungan.', score: 0.5 }, { text: 'Fokus yang seimbang antara tugas dan hubungan.', score: 1 }] },
+      { id: 20, displayNum: 40, quadrant: 4, text: 'Saat saya bekerja dengan tim, saya selalu', options: [{ text: 'Jelaskan dengan gamblang apa yang saya harapkan dari para anggota.', score: 0.5 }, { text: 'Libatkan semua anggota untuk berpartisipasi dengan antusias.', score: 1 }] }
     ];
 
     // --- LANDING PAGE ---
@@ -180,7 +180,7 @@
               {questions.map((q) => (
                 <div key={q.id} className="p-6 space-y-3">
                   <div className="flex gap-3">
-                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-slate-100 text-xs font-mono text-slate-500 shrink-0">{q.id}</span>
+                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-slate-100 text-xs font-mono text-slate-500 shrink-0">{q.displayNum}</span>
                     <p className="text-sm font-medium text-slate-800 pt-0.5">{q.text}</p>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 pl-9">
@@ -216,30 +216,29 @@
       );
     }
 
-    // --- SCORE DASHBOARD (TANPA NAMA & DEPARTEMEN) ---
+    // --- SCORE DASHBOARD ---
     function ScoreDashboard({ answers, onReset }) {
       let totalEQScorePart2 = 0;
 
-          const pilarResults = QUADRANTS.map((quad) => {
-      // Ubah range ID sesuai dengan data QUESTIONS (1-10 untuk Pillar 3, 11-20 untuk Pillar 4)
-      const minQ = quad.id === 3 ? 1 : 11;
-      const maxQ = quad.id === 3 ? 10 : 20;
-      
-      let score = 0;
-      for (let i = minQ; i <= maxQ; i++) {
-        score += answers[i]?.score || 0;
-      }
-      totalEQScorePart2 += score;
-    
-      let statusText = '';
-      let badgeColor = '';
-      if (score >= 8.0) { statusText = 'Excellent'; badgeColor = 'bg-emerald-100 text-emerald-800 border-emerald-200'; }
-      else if (score >= 6.0) { statusText = 'Good'; badgeColor = 'bg-blue-100 text-blue-800 border-blue-200'; }
-      else if (score >= 4.0) { statusText = 'Average'; badgeColor = 'bg-amber-100 text-amber-800 border-amber-200'; }
-      else { statusText = 'Needs Development'; badgeColor = 'bg-rose-100 text-rose-800 border-rose-200'; }
-    
-      return { ...quad, score, statusText, badgeColor };
-});
+      const pilarResults = QUADRANTS.map((quad) => {
+        // PERBAIKAN LOGIKA: Ambil soal berdasarkan kuadran secara dinamis
+        const pilarQuestions = QUESTIONS.filter(q => q.quadrant === quad.id);
+        let score = 0;
+        
+        pilarQuestions.forEach(q => {
+          score += answers[q.id]?.score || 0;
+        });
+        
+        totalEQScorePart2 += score;
+
+        let statusText = '';
+        let badgeColor = '';
+        if (score >= 8.0) { statusText = 'Excellent'; badgeColor = 'bg-emerald-100 text-emerald-800 border-emerald-200'; }
+        else if (score >= 6.0) { statusText = 'Good'; badgeColor = 'bg-blue-100 text-blue-800 border-blue-200'; }
+        else if (score >= 4.0) { statusText = 'Average'; badgeColor = 'bg-amber-100 text-amber-800 border-amber-200'; }
+        else { statusText = 'Needs Development'; badgeColor = 'bg-rose-100 text-rose-800 border-rose-200'; }
+
+        return { ...quad, score, statusText, badgeColor };
       });
 
       const averageScore = totalEQScorePart2 / 2;
