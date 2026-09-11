@@ -221,8 +221,8 @@
       let totalEQScorePart2 = 0;
 
       const pilarResults = QUADRANTS.map((quad) => {
-        const minQ = quad.id === 3 ? 21 : 31;
-        const maxQ = quad.id === 3 ? 30 : 40;
+        const minQ = quad.id === 3 ? 1 : 11;
+        const maxQ = quad.id === 3 ? 10 : 20;
         let score = 0;
         for (let i = minQ; i <= maxQ; i++) {
           score += answers[i]?.score || 0;
